@@ -1,0 +1,44 @@
+#formulario{
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #2A2A2A;
+    padding: 20px;
+    border-radius: 8px;
+}
+fieldset{
+    margin: 10px;
+    padding: 10px;
+}
+fieldset legend{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+button,
+select,
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #888787;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+input[type="submit"]{
+    background-color: #100f0f;
+    color: #F0F0F0;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+input[type="submit"]:hover{
+    background-color: #F0F0F0;
+    color: #100f0f;
+}

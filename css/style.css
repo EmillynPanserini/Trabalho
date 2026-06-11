@@ -1,0 +1,114 @@
+
+/* Váriavéis globais */
+:root{
+    --bg-color: #1A1A1A;
+    --nav-bg: #2A2A2A;
+    --text-main: #F0F0F0;
+    --accent-color: #0DD1D9;
+    --accent-hover: #0BA5AB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    font-optical-sizing: auto; /* melhora legibilidade em tamanhos de fontes diferentes*/
+    min-height: 100vh; /* garante que o body ocupe a tela toda*/
+}
+
+header{
+    text-align: left;
+    padding: 20px 0 10px 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+}
+
+.logo{
+    width: 150px; /*define a largura do elemento, neste caso a imagem que está com a classe logo*/
+    height: 90px; /*define a altura do elemento, neste caso a imagem que está com a classe logo*/
+    border-radius: 50%;
+}
+
+/*Estilos para barra de navegação*/
+
+nav{
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-top: 10px;
+}
+
+nav ul{
+    background-color: var(--nav-bg);
+    list-style-type: none;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li{
+    margin: 0 20px;
+}
+
+nav ul li a{
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    text-decoration: none; /*tira a linha do link*/
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color); /* linha ciano*/
+}
+
+/*Estilos do conteúdo principal (main)*/
+main{
+    flex-grow: 1; /* faz o main empurrar o footer pro final da página */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Estilos do Botão */
+.btn-hero {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #0B0E14; /* Texto escuro dentro do botão claro para contraste */
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-hero:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px); /* Efeito de flutuar ao passar o mouse */
+}
+
+/*Estilos para o rodapé*/
+footer{
+    background-color: var(--nav-bg);
+    color: var(--text-main);
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #2A3241; /* Separação sutil */
+    font-size: 0.9rem;
+    position: relative; /*o relative é pq conforme for adicionado elementos no main o footer desce, ele n fica fixo*/
+    border-bottom: 2px solid var(--accent-color); /* linha ciano*/
+}

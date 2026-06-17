@@ -22,14 +22,19 @@
 
 <body>
 
-    <nav class="navMenu" id="navMenu">
+    <nav>
         <a class="nav-logo" href="../index.html">
             <img class="logo" src="../imagens/logo.png" alt="logoDarken">
         </a>
         <ul class="nav-list">
-            <li><a href="../index.html"> Página Principal</a></li>
-            <li><a href="serviços.html">Serviços</a></li>
-            <li><a href="feedbacks.html">Feedbacks</a></li>
+            <li><a href="../index.html">Página Principal</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li class="nav-item-feedbacks">
+                <a href="feedbacks.html">Feedbacks</a>
+                <ul class="nav-submenu">
+                    <li><a href="feedbacks.html#formularioFeedback">Formulário</a></li>
+                </ul>
+            </li>
             <li><a href="contato.html" class="active">Contatos</a></li>
         </ul>
     </nav>
@@ -55,7 +60,7 @@
                     <option value="suporte">Suporte</option>
                     <option value="vendas">Vendas</option>
                     <option value="servicos">Serviços</option>
-                    <option value="fedback">Fedback</option>
+                    <option value="feedback">Feedback</option>
                     <option value="outros">Outros</option>
                 </select>
 
@@ -74,9 +79,7 @@
         <p id="pMotivo"></p>
     </main>
 
-    </main>
-
-    <footer class="footer">
+    <footer>
         <p>&copy; 2026 Emillyn Panserini. Todos os direitos reservados.</p>
     </footer>
 

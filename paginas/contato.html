@@ -22,17 +22,15 @@
 
 <body>
 
-    <header>
-        <figure>
+    <nav class="navMenu" id="navMenu">
+        <a class="nav-logo" href="../index.html">
             <img class="logo" src="../imagens/logo.png" alt="logoDarken">
-        </figure>
-    </header>
-
-    <nav class="navMenu">
-        <ul>
+        </a>
+        <ul class="nav-list">
             <li><a href="../index.html"> Página Principal</a></li>
-            <li><a href="../paginas/serviços.html">Serviços</a></li>
-            <li><a href="../paginas/contato.html">Contatos</a></li>
+            <li><a href="serviços.html">Serviços</a></li>
+            <li><a href="feedbacks.html">Feedbacks</a></li>
+            <li><a href="contato.html" class="active">Contatos</a></li>
         </ul>
     </nav>
 
@@ -44,7 +42,7 @@
                 <input id="nome" name="Nome" type="text" required>
 
                 <label for="email">Email:</label>
-                <input id="email" name="Email" type="Email" required>
+                <input id="email" name="Email" type="email" required>
 
                 <label for="dtNascimento">Data de Nascimento</label>
                 <input id="dtNascimento" name="DtNascimento" type="date" required>
@@ -74,6 +72,8 @@
         <p id="pData"></p>
         <p id="pMensagem"></p>
         <p id="pMotivo"></p>
+    </main>
+
     </main>
 
     <footer class="footer">

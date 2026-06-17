@@ -17,29 +17,41 @@
 
 <body>
 
-    <header>
-        <figure>
+    <nav class="navMenu" id="navMenu">
+        <a class="nav-logo" href="index.html">
             <img class="logo" src="./imagens/logo.png" alt="logoDarken">
-        </figure>
-    </header>
-
-    <nav class="navMenu">
-        <ul>
-            <li><a href="index.html"> Página Principal</a></li>
+        </a>
+        <ul class="nav-list">
+            <li><a href="index.html" class="active"> Página Principal</a></li>
             <li><a href="./paginas/serviços.html">Serviços</a></li>
+            <li><a href="./paginas/feedbacks.html">Feedbacks</a></li>
             <li><a href="./paginas/contato.html">Contatos</a></li>
         </ul>
     </nav>
 
-    <main>
+    <main class="main-hero">
         <section class="hero conteiner">
             <h1>Conquiste o elo que você merece</h1>
-            <a href="btn_hero">Conheça meus serviços</a>     
+            <a href="./paginas/serviços.html" class="btn-hero">Conheça meus serviços</a>     
+        </section>
+
+        <section class="referencia-section">
+            <div class="referencia-content">
+                <div class="referencia-texto">
+                    <h2 class="referencia-titulo">Por que a Darken é referência no mercado</h2>
+                    <p class="referencia-descricao">Temos os melhores boosters para concluir o seu serviço com agilidade, profissionalismo e um preço super barato. Além disso, damos sempre o melhor apoio aos nossos clientes. Trabalhamos com Mercado Pago e com criptografia em nossos servidores, tudo isso para que você possa comprar e navegar com segurança.</p>
+                </div>
+                <aside class="referencia-aside">
+                    <img src="./imagens/aside.png" alt="Imagem de referência Darkencry">
+                </aside>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
         <p>&copy; 2026 Emillyn Panserini. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

@@ -22,29 +22,66 @@
 
 <body>
 
-    <header>
-        <figure>
+    <nav class="navMenu" id="navMenu">
+        <a class="nav-logo" href="../index.html">
             <img class="logo" src="../imagens/logo.png" alt="logoDarken">
-        </figure>
-    </header>
-
-    <nav class="navMenu">
-        <ul>
+        </a>
+        <ul class="nav-list">
             <li><a href="../index.html"> Página Principal</a></li>
-            <li><a href="../paginas/serviços.html">Serviços</a></li>
-            <li><a href="../paginas/contato.html">Contatos</a></li>
+            <li><a href="serviços.html" class="active">Serviços</a></li>
+            <li><a href="feedbacks.html">Feedbacks</a></li>
+            <li><a href="contato.html">Contatos</a></li>
         </ul>
     </nav>
 
     <main>
-        <section class="hero conteiner">
-            <h1>Conquiste o elo que você merece</h1>
-            <a href="btn_hero">Conheça meus serviços</a>     
+        <section class="servicos-container">
+            <h1 class="servicos-titulo">Nossos Serviços</h1>
+            
+            <div class="servicos-grid">
+                <article class="servico-card">
+                    <h2 class="servico-titulo">Elo Boost</h2>
+                    <p class="servico-descricao">
+                        Ideal para você que travou em alguma divisão,
+                        jogaremos em sua conta até atingir o ELO desejado.
+                        Garantimos 100% de sigilo, uso de VPN e segurança total. 
+                        As tuas recompensas de final de temporada estão apenas a 
+                        um clique de distância!
+                    </p>
+                </article>
+
+                <article class="servico-card">
+                    <h2 class="servico-titulo">Duo Boost</h2>
+                    <p class="servico-descricao">Queres chegar ao topo sem partilhar os teus dados? Com o Duo Boost, jogas lado a lado com um jogador Desafiante. Entramos na mesma partida para garantir vitórias constantes, melhorar o teu MMR.</p>
+                </article>
+
+                <article class="servico-card">
+                    <h2 class="servico-titulo">Coach</h2>
+                    <p class="servico-descricao">
+                        Está preso no mesmo elo e não sabe o que está fazendo de errado? 
+                        O nosso serviço de Coaching irá te ajudar.
+                        Analisamos as tuas partidas, corrigimos erros de macro/micro, 
+                        controle de wave e tomada de decisão. Descobra como carregar qualquer jogo.
+                    </p>
+                </article>
+
+                <article class="servico-card">
+                    <h2 class="servico-titulo">Vitórias Garantidas</h2>
+                    <p class="servico-descricao">
+                        Falta muito pouco para subir de divisão e não quer arriscar? 
+                        O nosso serviço de Vitórias foca em um saldo positivo. 
+                        Compre exatamente o número de vitórias que precisa. 
+                        Se por acaso perdermos uma partida, jogamos as necessárias 
+                        para compensar e entregar o resultado que contratou.
+                    </p>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
         <p>&copy; 2026 Emillyn Panserini. Todos os direitos reservados.</p>
     </footer>
+
 </body>
 </html>

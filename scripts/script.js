@@ -1,6 +1,15 @@
 function mostrarDadosForm(event){
     event.preventDefault();
     
+    // 1. Capturamos o formulário inteiro pelo ID
+    let form = document.getElementById("formulario");
+
+    // 2. Verificamos se o formulário é válido (se o email tem @, se os required estão preenchidos)
+    if (!form.checkValidity()) {
+        form.reportValidity(); // Exibe o balão de erro nativo do navegador
+        return; // Interrompe a função aqui, não exibindo o alert nem salvando os dados
+    }
+
     let nome = document.getElementById("nome").value; //Se é byId vc coloca o id, se for byname coloca o name, e o value é para o input
     let email = document.getElementById("email").value;
     
@@ -47,3 +56,25 @@ function limparDados(event) {
     document.getElementById("pMensagem").innerText = "";
     document.getElementById("pMotivo").innerText = "";
 }
+
+// Função para enviar feedback
+function enviarFeedback(event) {
+    event.preventDefault();
+    
+    // Obter valor do nome
+    const nome = document.getElementById('nome').value;
+    
+    // Mostrar alerta de sucesso
+    alert(`Obrigado ${nome}! Seu feedback foi enviado com sucesso. Apreciamos sua opinião!`);
+    
+    // Limpar o formulário
+    document.getElementById('formularioFeedback').reset();
+}
+
+// Adicionar listener ao formulário de feedback quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    const formularioFeedback = document.getElementById('formularioFeedback');
+    if (formularioFeedback) {
+        formularioFeedback.addEventListener('submit', enviarFeedback);
+    }
+});

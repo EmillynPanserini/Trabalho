@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedbacks - Darkencry</title>
-    <meta content="Veja os feedbacks de nossos clientes satisfeitos com os serviços de Elo Boost da Darkencry." 
-    name="description">
+    <meta content="Veja o que nossos clientes dizem sobre a Darkencry." name="description">
     <meta content="Feedbacks - Darkencry" property="og:title">
-    <!-- CSS E HTML LINKADOS-->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/formulario.css">
-
-    <!-- FONTES E ICON-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -38,69 +34,105 @@
     </nav>
 
     <main>
-        <section class="feedbacks-container">
-            <h1 class="feedbacks-titulo">Feedbacks de Nossos Clientes</h1>
-            
-            <section class="feedbacks-grid">
-                <article class="feedback-card">
-                    <img src="../imagens/feedback1.png" alt="Feedback cliente 1" class="feedback-imagem">
-                </article>
 
-                <article class="feedback-card">
-                    <img src="../imagens/feedback2.png" alt="Feedback cliente 2" class="feedback-imagem">
-                </article>
+        <!-- SEÇÃO: Faixa de depoimentos com carrossel -->
+        <section class="depoimentos-section">
+            <aside class="depoimentos-titulo-aside">
+                <h2>O QUE OS CLIENTES DIZEM SOBRE A DARKENCRY?</h2>
+            </aside>
 
-                <article class="feedback-card">
-                    <img src="../imagens/feedback3.png" alt="Feedback cliente 3" class="feedback-imagem">
-                </article>
-            </section>
+            <section class="depoimentos-carrossel-area">
+                <ul class="carrossel-lista" id="carrosselLista">
 
-            <section class="novo-feedback-section">
-                <h2 class="novo-feedback-titulo">Deixe seu Feedback</h2>
-                <p class="novo-feedback-subtitulo">Sua opinião é muito importante para nós! Compartilhe sua experiência com nossos serviços.</p>
-                
-                <form id="formularioFeedback" class="feedback-form">
-                    <fieldset>
-                        <legend class="form-legend">Seus dados</legend>
-                        <label for="nome">Nome completo</label>
-                        <input type="text" id="nome" name="nome" required>
+                    <li class="carrossel-item ativo">
+                        <article class="depoimento-card">
+                            <h3>BOTELHO</h3>
+                            <p>Fiz uma semana de coach com o Nayard e, sinceramente, foi uma experiência muito boa. Nesse período, melhorei muito.</p>
+                        </article>
+                    </li>
 
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </fieldset>
+                    <li class="carrossel-item">
+                        <article class="depoimento-card">
+                            <h3>STER</h3>
+                            <p>Duoboost top, no precinho e fácil de combinar, recomendo dms!!!</p>
+                        </article>
+                    </li>
 
-                    <fieldset>
-                        <legend class="form-legend">Informações do serviço</legend>
-                        <label for="servico">Qual serviço você utilizou?</label>
-                        <select id="servico" name="servico" required>
-                            <option value="">Selecione um serviço</option>
-                            <option value="elo-boost">Elo Boost</option>
-                            <option value="duo-boost">Duo Boost</option>
-                            <option value="coach">Coach</option>
-                            <option value="vitorias-garantidas">Vitórias Garantidas</option>
-                        </select>
+                    <li class="carrossel-item">
+                        <article class="depoimento-card">
+                            <h3>JOÃO</h3>
+                            <p>Muito bom, 100% garantido, muito bom mesmo.</p>
+                        </article>
+                    </li>
 
-                        <label for="avaliacao">Avaliação (1-5 estrelas)</label>
-                        <select id="avaliacao" name="avaliacao" required>
-                            <option value="">Selecione uma avaliação</option>
-                            <option value="5">⭐⭐⭐⭐⭐ (5 estrelas)</option>
-                            <option value="4">⭐⭐⭐⭐ (4 estrelas)</option>
-                            <option value="3">⭐⭐⭐ (3 estrelas)</option>
-                            <option value="2">⭐⭐ (2 estrelas)</option>
-                            <option value="1">⭐ (1 estrela)</option>
-                        </select>
-                    </fieldset>
+                    <li class="carrossel-item">
+                        <article class="depoimento-card">
+                            <h3>KAUAN</h3>
+                            <p>Mesmo sendo iniciante no LoL, já estou começando a perceber uma evolução muito grande na minha gameplay graças às aulas de coach.</p>
+                        </article>
+                    </li>
 
-                    <fieldset>
-                        <legend class="form-legend">Seu feedback</legend>
-                        <label for="mensagem">Seu Feedback</label>
-                        <textarea id="mensagem" name="mensagem" rows="6" placeholder="Conte-nos sua experiência..." required></textarea>
-                    </fieldset>
-
-                    <button type="submit" class="btn-feedback">Enviar Feedback</button>
-                </form>
+                </ul>
+                <button class="carrossel-btn carrossel-btn-next" id="btnNext" type="button" aria-label="Próximo depoimento">&#8250;</button>
             </section>
         </section>
+
+        <!-- SEÇÃO: Formulário de feedback -->
+        <section class="novo-feedback-section" id="formularioFeedback">
+            <h2 class="novo-feedback-titulo">Deixe seu Feedback</h2>
+            <p class="novo-feedback-subtitulo">Sua opinião é muito importante para nós! Compartilhe sua experiência com nossos serviços.</p>
+
+            <form class="feedback-form" id="formFeedback">
+                <fieldset>
+                    <legend class="form-legend">Seus dados</legend>
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="form-legend">Informações do serviço</legend>
+                    <label for="servico">Qual serviço você utilizou?</label>
+                    <select id="servico" name="servico" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="elo-boost">Elo Boost</option>
+                        <option value="duo-boost">Duo Boost</option>
+                        <option value="coach">Coach</option>
+                        <option value="vitorias-garantidas">Vitórias Garantidas</option>
+                    </select>
+
+                    <label for="avaliacao">Avaliação (1-5 estrelas)</label>
+                    <select id="avaliacao" name="avaliacao" required>
+                        <option value="">Selecione uma avaliação</option>
+                        <option value="5">⭐⭐⭐⭐⭐ (5 estrelas)</option>
+                        <option value="4">⭐⭐⭐⭐ (4 estrelas)</option>
+                        <option value="3">⭐⭐⭐ (3 estrelas)</option>
+                        <option value="2">⭐⭐ (2 estrelas)</option>
+                        <option value="1">⭐ (1 estrela)</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="form-legend">Seu feedback</legend>
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" placeholder="Conte-nos sua experiência..." required></textarea>
+                </fieldset>
+
+                <button type="submit" class="btn-feedback">Enviar Feedback</button>
+            </form>
+
+            <section class="feedback-resposta" id="feedbackResposta" hidden>
+                <h3 id="respostaH3"></h3>
+                <p id="respostaNome"></p>
+                <p id="respostaEmail"></p>
+                <p id="respostaServico"></p>
+                <p id="respostaAvaliacao"></p>
+                <p id="respostaMensagem"></p>
+            </section>
+        </section>
+
     </main>
 
     <footer>

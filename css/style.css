@@ -746,3 +746,199 @@ footer{
     }
 }
 
+
+
+/*
+  Seção de depoimentos
+*/
+.depoimentos-section {
+    display: flex;
+    align-items: stretch;
+    height: 350px;
+    overflow: hidden;
+    margin: -80px -40px 60px -40px;
+    flex-shrink: 0;
+}
+
+/* Faixa esquerda */
+.depoimentos-titulo-aside {
+    background-color: var(--nav-bg);
+    width: 42%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 56px 40px 36px;
+    clip-path: polygon(0 0, 86% 0, 100% 100%, 0 100%);
+    z-index: 2;
+}
+
+.depoimentos-titulo-aside h2 {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    max-width: 240px;
+}
+
+/* Faixa direita*/
+.depoimentos-carrossel-area {
+    background-color: var(--accent-color);
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 56px;
+}
+
+/* Lista de itens*/
+.carrossel-lista {
+    list-style: none;
+    flex: 1;
+    position: relative;
+    height: 100%;
+}
+
+/* Cada item ocupa a mesma área; oculto por padrão */
+.carrossel-item {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+/* Apenas o item ativo aparece */
+.carrossel-item.ativo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Card de depoimento */
+.depoimento-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.depoimento-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.08em;
+}
+
+.depoimento-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.65;
+    max-width: 420px;
+}
+
+/* Botões ‹ › posicionados nas bordas da área ciano */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 8px;
+    z-index: 3;
+    transition: opacity 0.2s ease;
+}
+
+.carrossel-btn:hover {
+    opacity: 0.6;
+}
+
+.carrossel-btn-next {
+    left: 20px;
+}
+
+/* Seção de resposta após envio do formulário */
+.feedback-resposta {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #2A2A2A 0%, #1F1F1F 100%);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feedback-resposta h3 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+}
+
+.feedback-resposta p {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 6px;
+}
+
+/* ================================================
+   RESPONSIVIDADE DA FAIXA DE DEPOIMENTOS
+   ================================================ */
+
+@media (min-width: 992px) {
+    .depoimentos-section {
+        margin: -80px -40px 60px -40px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 767px) {
+    .depoimentos-section {
+        flex-direction: column;
+        height: auto;
+        margin: -40px -20px 40px -20px;
+    }
+
+    .depoimentos-titulo-aside {
+        width: 100%;
+        clip-path: none;
+        padding: 32px 24px;
+        justify-content: center;
+    }
+
+    .depoimentos-titulo-aside h2 {
+        max-width: 100%;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .depoimentos-carrossel-area {
+        padding: 32px 48px;
+        min-height: 180px;
+    }
+
+    .carrossel-lista {
+        min-height: 160px;
+    }
+
+    .depoimento-card p {
+        max-width: 100%;
+    }
+
+    .carrossel-btn-next {
+        right: 0px;
+    }
+}

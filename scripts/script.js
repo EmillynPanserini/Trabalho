@@ -1,7 +1,7 @@
 function mostrarDadosForm(event){
     event.preventDefault();
     
-    // 1. Capturamos o formulário inteiro pelo ID
+
     let form = document.getElementById("formulario");
 
     // 2. Verificamos se o formulário é válido (se o email tem @, se os required estão preenchidos)
@@ -10,7 +10,7 @@ function mostrarDadosForm(event){
         return; // Interrompe a função aqui, não exibindo o alert nem salvando os dados
     }
 
-    let nome = document.getElementById("nome").value; //Se é byId vc coloca o id, se for byname coloca o name, e o value é para o input
+    let nome = document.getElementById("nome").value; 
     let email = document.getElementById("email").value;
     
     let DtNascimento = document.getElementById("dtNascimento").value;
@@ -22,7 +22,7 @@ function mostrarDadosForm(event){
     let dataFormatada = data.toLocaleDateString("pt-BR")
     
     let mensagem = document.getElementById("mensagem").value;
-    //let motivo = document.getElementById("slMotivo").value;//serviços n aparece com ç em baixo, pq o option tá puxando o value
+   
     let motivo = document.getElementById("motivo");
     let motivoSelecionado = motivo.options[motivo.selectedIndex].text;
     let retorno = "Olá, " + nome + ", confira os dados informados:";
@@ -78,3 +78,98 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioFeedback.addEventListener('submit', enviarFeedback);
     }
 });
+
+// ================================================
+// CARROSSEL DE DEPOIMENTOS (feedbacks.html)
+// Funcionamento por visibilidade (classe .ativo)
+// ================================================
+
+(function () {
+    var lista   = document.getElementById('carrosselLista');
+    var btnPrev = document.getElementById('btnPrev');
+    var btnNext = document.getElementById('btnNext');
+
+    // Só executa se os elementos existirem na página
+    if (!lista || !btnPrev || !btnNext) return;
+
+    var itens = lista.querySelectorAll('.carrossel-item');
+    var total = itens.length;
+    var atual = 0;
+
+    function irPara(indice) {
+        // Remove .ativo do item atual
+        itens[atual].classList.remove('ativo');
+        // Calcula o próximo índice com wraparound
+        atual = (indice + total) % total;
+        // Adiciona .ativo ao novo item
+        itens[atual].classList.add('ativo');
+    }
+
+    btnPrev.addEventListener('click', function () { irPara(atual - 1); });
+    btnNext.addEventListener('click', function () { irPara(atual + 1); });
+
+    // Suporte a swipe (touch)
+    var inicioX = 0;
+    lista.addEventListener('touchstart', function (e) {
+        inicioX = e.touches[0].clientX;
+    }, { passive: true });
+    lista.addEventListener('touchend', function (e) {
+        var diff = inicioX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+            irPara(diff > 0 ? atual + 1 : atual - 1);
+        }
+    }, { passive: true });
+
+    // Suporte a teclado (acessibilidade)
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  irPara(atual - 1);
+        if (e.key === 'ArrowRight') irPara(atual + 1);
+    });
+}());
+
+// ================================================
+// FORMULÁRIO DE FEEDBACK 
+// ================================================
+
+(function () {
+    var lista   = document.getElementById('carrosselLista');
+    var btnNext = document.getElementById('btnNext');
+
+    // Só executa se os elementos existirem na página
+    if (!lista || !btnNext) return;
+
+    var itens = lista.querySelectorAll('.carrossel-item');
+    var total = itens.length;
+    var atual = 0;
+
+    function irPara(indice) {
+        // Remove .ativo do item atual
+        itens[atual].classList.remove('ativo');
+        // Calcula o próximo índice com wraparound
+        atual = (indice + total) % total;
+        // Adiciona .ativo ao novo item
+        itens[atual].classList.add('ativo');
+    }
+
+    btnNext.addEventListener('click', function () { irPara(atual + 1); });
+
+    // Suporte a swipe (touch)
+    var inicioX = 0;
+    lista.addEventListener('touchstart', function (e) {
+        inicioX = e.touches[0].clientX;
+    }, { passive: true });
+    lista.addEventListener('touchend', function (e) {
+        var diff = inicioX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+            irPara(diff > 0 ? atual + 1 : atual - 1);
+        }
+    }, { passive: true });
+
+    // Suporte a teclado (acessibilidade)
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  irPara(atual - 1);
+        if (e.key === 'ArrowRight') irPara(atual + 1);
+    });
+}());
+
+
